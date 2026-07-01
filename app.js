@@ -80,7 +80,7 @@
   const createCard = (student) => {
     const card = document.createElement("button");
     card.type = "button";
-    card.className = "student-card";
+    card.className = "student-card student-entry";
     card.setAttribute("aria-label", `查看${student.name}的详细资料`);
 
     const photoWrap = document.createElement("span");
@@ -114,8 +114,16 @@
     const field = document.createElement("span");
     field.className = "card-field";
     field.textContent = student.fields.join(" · ");
-    content.append(school, titleRow, field);
-    card.append(photoWrap, content);
+    const college = document.createElement("span");
+    college.className = "card-college";
+    college.textContent = `${student.college} · ${student.grade}级`;
+    content.append(school, titleRow, college, field);
+
+    const biography = document.createElement("span");
+    biography.className = "card-bio";
+    biography.textContent = student.bio;
+
+    card.append(photoWrap, content, biography);
     card.addEventListener("click", () => openStudent(student, card));
     return card;
   };
