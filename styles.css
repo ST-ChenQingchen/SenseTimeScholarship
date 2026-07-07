@@ -2031,6 +2031,133 @@ button {
   }
 }
 
+/* Full VI takeover: campaign blue lives only inside the supplied KV artwork. */
+.hero {
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 86% 10%, rgba(240, 46, 39, 0.13), transparent 27%),
+    radial-gradient(circle at 68% 82%, rgba(255, 168, 63, 0.16), transparent 28%),
+    var(--paper);
+}
+
+.hero-grid {
+  opacity: 0.34;
+  background-image:
+    linear-gradient(rgba(128, 105, 88, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(128, 105, 88, 0.08) 1px, transparent 1px);
+}
+
+.hero-glow {
+  opacity: 0.2;
+  background: var(--brand-red);
+}
+
+.hero::before,
+.hero::after {
+  border-color: rgba(240, 46, 39, 0.12);
+  opacity: 0.5;
+}
+
+.hero .eyebrow {
+  color: #7a6f67;
+}
+
+.hero .eyebrow span {
+  background: var(--brand-red);
+}
+
+.hero h1,
+.hero h1 em {
+  color: #000;
+}
+
+.hero h1 em {
+  color: var(--brand-red);
+}
+
+.hero-description {
+  color: var(--muted);
+}
+
+.hero-mini-stat strong {
+  color: #000;
+}
+
+.hero-mini-stat span {
+  color: var(--muted);
+}
+
+.hero-art-frame {
+  border-color: rgba(123, 99, 80, 0.2);
+  box-shadow: 0 30px 72px rgba(85, 54, 32, 0.18);
+}
+
+.hero-art-frame::after {
+  background: linear-gradient(118deg, rgba(255, 255, 255, 0.14), transparent 34%, transparent 78%);
+}
+
+.art-caption,
+.scroll-cue {
+  color: #8b8179;
+}
+
+.art-index {
+  color: rgba(240, 46, 39, 0.12);
+}
+
+.scroll-cue i {
+  background: #b9aea5;
+}
+
+.winner-list-shell {
+  color: var(--ink);
+  background: #fff;
+}
+
+.student-entry {
+  border-bottom-color: var(--line);
+  color: var(--ink);
+}
+
+.student-entry:hover,
+.student-entry:focus-visible {
+  border-color: rgba(240, 46, 39, 0.46);
+  background: linear-gradient(90deg, rgba(240, 46, 39, 0.045), rgba(255, 173, 92, 0.025));
+}
+
+.student-entry .card-photo {
+  border-color: var(--line);
+  box-shadow: 0 8px 24px rgba(52, 36, 26, 0.1);
+}
+
+.student-entry .card-name {
+  color: #000;
+}
+
+.student-entry .card-school {
+  color: #303236;
+}
+
+.student-entry .card-college {
+  color: #8b8f97;
+}
+
+.student-entry .card-field {
+  color: var(--brand-red);
+}
+
+.card-bio {
+  color: var(--muted);
+}
+
+.empty-state {
+  color: var(--muted);
+}
+
+.empty-state strong {
+  color: #000;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
