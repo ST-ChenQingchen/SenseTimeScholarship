@@ -16,7 +16,7 @@
 
     <header class="site-header" id="top">
       <a class="wordmark" href="#top" aria-label="商汤 SenseTime，返回页面顶部">
-        <img class="brand-logo" src="./assets/brand/sensetime-logo.png" alt="商汤 SenseTime" />
+        <img class="brand-logo" src="./assets/brand/sensetime-logo-vi.png" alt="商汤 SenseTime" />
       </a>
       <nav class="site-nav" aria-label="主导航">
         <a href="#about">关于奖学金</a>
@@ -83,40 +83,44 @@
       </section>
 
       <section class="students-section" id="students" aria-labelledby="students-title">
-        <div class="section-heading">
-          <div>
-            <div class="section-kicker section-kicker-light"><span>02</span> 2026 SCHOLARS</div>
-            <h2 id="students-title">2026 获奖名单</h2>
-          </div>
-          <p>他们以研究回应时代，<br />以创造拓宽智能的边界。</p>
-        </div>
-
-        <div class="filter-panel" aria-label="学生搜索与筛选">
-          <label class="search-box">
-            <span aria-hidden="true">⌕</span>
-            <span class="sr-only">搜索获奖学生</span>
-            <input id="search-input" type="search" placeholder="搜索姓名、学校或研究方向" autocomplete="off" />
-          </label>
-          <div class="filter-row">
-            <div class="filter-group" id="filter-group" role="group" aria-label="按研究方向筛选">
-              <button class="filter-button active" type="button" data-category="全部" aria-pressed="true">全部</button>
-              <button class="filter-button" type="button" data-category="大模型/智能体" aria-pressed="false">大模型 / 智能体</button>
-              <button class="filter-button" type="button" data-category="具身智能/世界模型" aria-pressed="false">具身 / 世界模型</button>
-              <button class="filter-button" type="button" data-category="生成/视觉" aria-pressed="false">生成 / 视觉</button>
-              <button class="filter-button" type="button" data-category="系统/硬件" aria-pressed="false">系统 / 硬件</button>
-              <button class="filter-button" type="button" data-category="安全/对齐" aria-pressed="false">安全 / 对齐</button>
-              <button class="filter-button" type="button" data-category="其他" aria-pressed="false">其他</button>
+        <div class="students-intro">
+          <div class="section-heading">
+            <div>
+              <div class="section-kicker"><span>02</span> 2026 SCHOLARS</div>
+              <h2 id="students-title">2026 获奖名单</h2>
             </div>
-            <p class="result-count"><strong id="result-count">30</strong> 位学生</p>
+            <p>他们以研究回应时代，<br />以创造拓宽智能的边界。</p>
+          </div>
+
+          <div class="filter-panel" aria-label="学生搜索与筛选">
+            <label class="search-box">
+              <span aria-hidden="true">⌕</span>
+              <span class="sr-only">搜索获奖学生</span>
+              <input id="search-input" type="search" placeholder="搜索姓名、学校或研究方向" autocomplete="off" />
+            </label>
+            <div class="filter-row">
+              <div class="filter-group" id="filter-group" role="group" aria-label="按研究方向筛选">
+                <button class="filter-button active" type="button" data-category="全部" aria-pressed="true">全部</button>
+                <button class="filter-button" type="button" data-category="大模型/智能体" aria-pressed="false">大模型 / 智能体</button>
+                <button class="filter-button" type="button" data-category="具身智能/世界模型" aria-pressed="false">具身 / 世界模型</button>
+                <button class="filter-button" type="button" data-category="生成/视觉" aria-pressed="false">生成 / 视觉</button>
+                <button class="filter-button" type="button" data-category="系统/硬件" aria-pressed="false">系统 / 硬件</button>
+                <button class="filter-button" type="button" data-category="安全/对齐" aria-pressed="false">安全 / 对齐</button>
+                <button class="filter-button" type="button" data-category="其他" aria-pressed="false">其他</button>
+              </div>
+              <p class="result-count"><strong id="result-count">30</strong> 位学生</p>
+            </div>
           </div>
         </div>
 
-        <div class="student-grid" id="student-grid" aria-live="polite"></div>
-        <div class="empty-state" id="empty-state" hidden>
-          <span aria-hidden="true">⌕</span>
-          <strong>没有找到匹配的学生</strong>
-          <p>换一个关键词或研究方向试试。</p>
-          <button id="reset-filter" type="button">清除筛选</button>
+        <div class="winner-list-shell">
+          <div class="student-grid" id="student-grid" aria-live="polite"></div>
+          <div class="empty-state" id="empty-state" hidden>
+            <span aria-hidden="true">⌕</span>
+            <strong>没有找到匹配的学生</strong>
+            <p>换一个关键词或研究方向试试。</p>
+            <button id="reset-filter" type="button">清除筛选</button>
+          </div>
         </div>
       </section>
 
@@ -133,7 +137,7 @@
     <footer class="site-footer">
       <div class="footer-content">
         <div class="wordmark footer-wordmark">
-          <img class="brand-logo" src="./assets/brand/sensetime-logo.png" alt="商汤 SenseTime" />
+          <img class="brand-logo" src="./assets/brand/sensetime-logo-vi.png" alt="商汤 SenseTime" />
         </div>
         <p>致敬每一位向未知出发的青年研究者</p>
         <span>© 2026 SenseTime Scholarship</span>
