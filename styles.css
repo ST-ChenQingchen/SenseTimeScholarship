@@ -1756,7 +1756,7 @@ button {
 
 .students-section .section-heading h2 {
   color: #000;
-  font-size: clamp(44px, 5vw, 64px);
+  font-size: clamp(40px, 4vw, 52px);
   font-weight: 600;
 }
 
@@ -1777,8 +1777,13 @@ button {
   color: var(--brand-red);
 }
 
+.search-box > span:first-child {
+  color: var(--brand-red);
+}
+
 .search-box input {
   color: #000;
+  font-size: 14px;
 }
 
 .search-box input::placeholder {
@@ -1787,6 +1792,7 @@ button {
 
 .filter-button {
   border-color: var(--line);
+  border-radius: 3px;
   color: #5f6268;
   background: #fff;
 }
