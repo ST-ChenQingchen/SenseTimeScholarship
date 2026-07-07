@@ -14,17 +14,12 @@
   const resetButton = document.querySelector("#reset-filter");
   const dialog = document.querySelector("#student-dialog");
   const closeButton = document.querySelector("#dialog-close");
-  const portraitStyle = document.querySelector("#portrait-style");
-  const portraitStyleButtons = [...document.querySelectorAll(".portrait-style-button")];
 
   let activeCategory = "全部";
-  let activePortraitStyle = "anime";
   let lastFocusedElement = null;
 
-  const portraitPath = (student) => {
-    if (activePortraitStyle === "original") return student.photo;
-    return student.photo.replace("./assets/students/", `./assets/students-${activePortraitStyle}/`);
-  };
+  const portraitPath = (student) =>
+    student.photo.replace("./assets/students/", "./assets/students-anime/");
 
   const normalize = (value) =>
     String(value || "")
@@ -176,18 +171,6 @@
   filterGroup.addEventListener("click", (event) => {
     const button = event.target.closest(".filter-button");
     if (button) setCategory(button.dataset.category);
-  });
-
-  portraitStyle.addEventListener("click", (event) => {
-    const button = event.target.closest(".portrait-style-button");
-    if (!button) return;
-    activePortraitStyle = button.dataset.style;
-    portraitStyleButtons.forEach((item) => {
-      const isActive = item === button;
-      item.classList.toggle("active", isActive);
-      item.setAttribute("aria-pressed", String(isActive));
-    });
-    render();
   });
 
   resetButton.addEventListener("click", () => {
