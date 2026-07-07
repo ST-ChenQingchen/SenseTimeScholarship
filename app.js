@@ -14,9 +14,17 @@
   const resetButton = document.querySelector("#reset-filter");
   const dialog = document.querySelector("#student-dialog");
   const closeButton = document.querySelector("#dialog-close");
+  const portraitStyle = document.querySelector("#portrait-style");
+  const portraitStyleButtons = [...document.querySelectorAll(".portrait-style-button")];
 
   let activeCategory = "全部";
+  let activePortraitStyle = "anime";
   let lastFocusedElement = null;
+
+  const portraitPath = (student) => {
+    if (activePortraitStyle === "original") return student.photo;
+    return student.photo.replace("./assets/students/", `./assets/students-${activePortraitStyle}/`);
+  };
 
   const normalize = (value) =>
     String(value || "")
@@ -39,7 +47,7 @@
 
   const openStudent = (student, trigger) => {
     lastFocusedElement = trigger || document.activeElement;
-    document.querySelector("#dialog-photo").src = student.photo;
+    document.querySelector("#dialog-photo").src = portraitPath(student);
     document.querySelector("#dialog-photo").alt = `${student.name}的证件照`;
     document.querySelector("#dialog-id").textContent = student.id;
     document.querySelector("#dialog-school").textContent = student.school;
@@ -86,7 +94,7 @@
     const photoWrap = document.createElement("span");
     photoWrap.className = "card-photo";
     const photo = document.createElement("img");
-    photo.src = student.photo;
+    photo.src = portraitPath(student);
     photo.alt = `${student.name}的证件照`;
     photo.loading = "lazy";
     photo.width = 295;
@@ -168,6 +176,18 @@
   filterGroup.addEventListener("click", (event) => {
     const button = event.target.closest(".filter-button");
     if (button) setCategory(button.dataset.category);
+  });
+
+  portraitStyle.addEventListener("click", (event) => {
+    const button = event.target.closest(".portrait-style-button");
+    if (!button) return;
+    activePortraitStyle = button.dataset.style;
+    portraitStyleButtons.forEach((item) => {
+      const isActive = item === button;
+      item.classList.toggle("active", isActive);
+      item.setAttribute("aria-pressed", String(isActive));
+    });
+    render();
   });
 
   resetButton.addEventListener("click", () => {

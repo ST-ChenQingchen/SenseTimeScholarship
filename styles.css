@@ -567,6 +567,39 @@ button {
   backdrop-filter: blur(14px);
 }
 
+.portrait-style {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 28px;
+}
+
+.portrait-style > span {
+  margin-right: 10px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.portrait-style-button {
+  min-height: 38px;
+  padding: 0 16px;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  color: #5f6268;
+  background: #fff;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.portrait-style-button:hover,
+.portrait-style-button:focus-visible,
+.portrait-style-button.active {
+  border-color: var(--brand-red);
+  color: #fff;
+  background: var(--brand-red);
+  outline: none;
+}
+
 .search-box {
   display: flex;
   align-items: center;
@@ -1261,6 +1294,15 @@ button {
     margin-right: -8px;
     margin-left: -8px;
     padding: 18px 14px;
+  }
+
+  .portrait-style {
+    flex-wrap: wrap;
+  }
+
+  .portrait-style > span {
+    width: 100%;
+    margin-bottom: 2px;
   }
 
   .filter-group {
