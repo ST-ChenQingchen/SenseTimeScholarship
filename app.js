@@ -158,12 +158,8 @@
   };
 
   const updateMetrics = () => {
-    const schoolCount = new Set(students.map((student) => student.school)).size;
-    const fieldCount = new Set(students.flatMap((student) => student.fields)).size;
-    document.querySelector("#hero-student-count").textContent = String(students.length);
-    document.querySelector("#metric-students").textContent = String(students.length);
-    document.querySelector("#metric-schools").textContent = String(schoolCount);
-    document.querySelector("#metric-fields").textContent = String(fieldCount);
+    const heroCount = document.querySelector("#hero-student-count");
+    if (heroCount) heroCount.textContent = String(students.length);
   };
 
   searchInput.addEventListener("input", render);

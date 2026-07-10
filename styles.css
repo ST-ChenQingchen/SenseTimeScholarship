@@ -112,6 +112,15 @@ button {
   object-fit: contain;
 }
 
+.brand-text {
+  display: inline-flex;
+  align-items: center;
+  color: currentColor;
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
 .site-nav {
   display: flex;
   gap: 42px;
@@ -167,7 +176,7 @@ button {
   position: relative;
   display: grid;
   min-height: 820px;
-  grid-template-columns: minmax(0, 0.78fr) minmax(480px, 1.22fr);
+  grid-template-columns: minmax(0, 860px);
   align-items: center;
   gap: clamp(40px, 6vw, 100px);
   overflow: hidden;
@@ -2305,6 +2314,32 @@ button {
 
   .dialog-content h2 {
     font-size: 42px;
+  }
+}
+
+/* 中文版精简首页：移除 KV 图片与项目介绍后，首屏采用单栏表达。 */
+.hero {
+  min-height: clamp(560px, 68vw, 760px);
+  grid-template-columns: minmax(0, 920px);
+}
+
+.hero-copy {
+  max-width: 860px;
+}
+
+.students-section {
+  margin-top: 0;
+}
+
+@media (max-width: 1120px) {
+  .hero {
+    grid-template-columns: minmax(0, 860px);
+  }
+}
+
+@media (max-width: 640px) {
+  .brand-text {
+    font-size: 23px;
   }
 }
 
