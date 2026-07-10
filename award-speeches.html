@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="2026商汤奖学金获奖感言。" />
+    <meta name="theme-color" content="#fbfaf7" />
+    <title>2026商汤奖学金 · 获奖感言</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="speech-page">
+    <header class="site-header speech-header" id="top">
+      <a class="wordmark" href="./index.html" aria-label="返回获奖名单">
+        <span class="brand-text">商汤</span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="./index.html#students">获奖学生</a>
+      </nav>
+      <a class="header-action" href="./index.html#students">返回名单 <span aria-hidden="true">↗</span></a>
+    </header>
+
+    <main class="speech-main">
+      <section class="speech-hero" aria-labelledby="speech-title">
+        <p class="eyebrow"><span></span> 2026 商汤奖学金</p>
+        <h1 id="speech-title">获奖感言</h1>
+        <p>获奖感言内容待补充。你提供正式文字后，我会按学生逐条更新到这里。</p>
+      </section>
+
+      <section class="speech-list" id="speech-list" aria-label="获奖感言列表"></section>
+    </main>
+
+    <script src="./students.js"></script>
+    <script>
+      (() => {
+        const list = document.querySelector("#speech-list");
+        const students = [...(window.STUDENTS || [])].sort((a, b) =>
+          a.pinyin.localeCompare(b.pinyin, "en", { sensitivity: "base" })
+        );
+        const fragment = document.createDocumentFragment();
+        students.forEach((student) => {
+          const item = document.createElement("article");
+          item.className = "speech-item";
+          item.id = student.id;
+          const title = document.createElement("h2");
+          title.textContent = student.name;
+          const meta = document.createElement("p");
+          meta.className = "speech-meta";
+          meta.textContent = `${student.school}${student.college}`;
+          const placeholder = document.createElement("p");
+          placeholder.textContent = "获奖感言内容待补充。";
+          item.append(title, meta, placeholder);
+          fragment.append(item);
+        });
+        list.replaceChildren(fragment);
+      })();
+    </script>
+  </body>
+</html>

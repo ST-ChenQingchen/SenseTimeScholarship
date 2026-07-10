@@ -81,12 +81,13 @@
   };
 
   const createCard = (student) => {
-    const card = document.createElement("button");
-    card.type = "button";
+    const card = document.createElement("article");
     card.className = "student-card student-entry";
-    card.setAttribute("aria-label", `查看${student.name}的详细资料`);
 
-    const photoWrap = document.createElement("span");
+    const person = document.createElement("div");
+    person.className = "card-person";
+
+    const photoWrap = document.createElement("div");
     photoWrap.className = "card-photo";
     const photo = document.createElement("img");
     photo.src = portraitPath(student);
@@ -99,35 +100,48 @@
     id.textContent = student.id;
     photoWrap.append(photo, id);
 
-    const content = document.createElement("span");
-    content.className = "card-content";
-    const school = document.createElement("span");
-    school.className = "card-school";
-    school.textContent = student.school;
-    const titleRow = document.createElement("span");
-    titleRow.className = "card-title-row";
     const name = document.createElement("span");
     name.className = "card-name";
     name.textContent = student.name;
-    const arrow = document.createElement("span");
-    arrow.className = "card-arrow";
-    arrow.setAttribute("aria-hidden", "true");
-    arrow.textContent = "↗";
-    titleRow.append(name, arrow);
-    const field = document.createElement("span");
-    field.className = "card-field";
-    field.textContent = student.fields.join(" · ");
-    const college = document.createElement("span");
-    college.className = "card-college";
-    college.textContent = `${student.college} · ${student.grade}级`;
-    content.append(school, titleRow, college, field);
+    person.append(photoWrap, name);
 
-    const biography = document.createElement("span");
+    const content = document.createElement("div");
+    content.className = "card-content";
+
+    const fields = document.createElement("div");
+    fields.className = "card-fields";
+    student.fields.forEach((fieldText) => {
+      const field = document.createElement("span");
+      field.className = "card-field";
+      field.textContent = fieldText;
+      fields.append(field);
+    });
+
+    const biography = document.createElement("p");
     biography.className = "card-bio";
-    biography.textContent = student.bio;
+    biography.textContent = `${student.school}${student.college}${student.bio}`;
 
-    card.append(photoWrap, content, biography);
-    card.addEventListener("click", () => openStudent(student, card));
+    const actions = document.createElement("div");
+    actions.className = "card-actions";
+
+    student.links.forEach((item) => {
+      const link = document.createElement("a");
+      link.className = "card-link card-link-secondary";
+      link.href = item.url;
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      link.innerHTML = `<span>${item.label}</span><span aria-hidden="true">↗</span>`;
+      actions.append(link);
+    });
+
+    const speechLink = document.createElement("a");
+    speechLink.className = "card-link card-link-primary";
+    speechLink.href = `./award-speeches.html#${student.id}`;
+    speechLink.textContent = "获奖感言";
+    actions.append(speechLink);
+
+    content.append(fields, biography, actions);
+    card.append(person, content);
     return card;
   };
 

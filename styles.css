@@ -2343,6 +2343,270 @@ button {
   }
 }
 
+/* 名录信息结构：头像姓名在左，研究领域与正文在右。 */
+.student-entry {
+  display: grid;
+  grid-template-columns: 136px minmax(0, 1fr);
+  gap: clamp(28px, 5vw, 72px);
+  align-items: start;
+  min-height: 0;
+  padding: clamp(36px, 5vw, 62px) 0;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  cursor: default;
+  text-align: left;
+}
+
+.student-entry:hover {
+  background: transparent;
+  box-shadow: none;
+  transform: none;
+}
+
+.student-entry:hover .card-photo img {
+  transform: none;
+}
+
+.student-entry .card-person {
+  display: grid;
+  gap: 16px;
+  justify-items: center;
+}
+
+.student-entry .card-photo {
+  width: 112px;
+  height: 112px;
+  min-height: 0;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: var(--paper);
+  box-shadow: 0 8px 24px rgba(52, 36, 26, 0.1);
+}
+
+.student-entry .card-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 12%;
+}
+
+.student-entry .card-id,
+.student-entry .card-photo::after {
+  display: none;
+}
+
+.student-entry .card-name {
+  color: #000;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.student-entry .card-content {
+  display: block;
+  min-height: 0;
+  padding: 2px 0 0;
+  background: transparent;
+}
+
+.student-entry .card-fields {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0 0 20px;
+}
+
+.student-entry .card-field {
+  display: inline-flex;
+  margin: 0;
+  padding: 6px 13px;
+  border: 1px solid rgba(240, 46, 39, 0.28);
+  border-radius: 999px;
+  color: var(--brand-red);
+  background: rgba(240, 46, 39, 0.045);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0;
+  -webkit-line-clamp: unset;
+}
+
+.student-entry .card-bio {
+  display: block;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+  color: #4f5661;
+  font-size: 16px;
+  line-height: 1.95;
+  -webkit-line-clamp: unset;
+}
+
+.student-entry .card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.student-entry .card-link {
+  display: inline-flex;
+  min-height: 42px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 0 18px;
+  border: 1px solid var(--brand-red);
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.student-entry .card-link-primary {
+  color: #fff;
+  background: var(--brand-red);
+}
+
+.student-entry .card-link-secondary {
+  color: var(--brand-red);
+  background: transparent;
+}
+
+.student-entry .card-link:hover,
+.student-entry .card-link:focus-visible {
+  border-color: var(--brand-red-dark);
+  outline: none;
+}
+
+.student-entry .card-link-primary:hover,
+.student-entry .card-link-primary:focus-visible {
+  background: var(--brand-red-dark);
+}
+
+.student-entry .card-link-secondary:hover,
+.student-entry .card-link-secondary:focus-visible {
+  color: #fff;
+  background: var(--brand-red-dark);
+}
+
+.speech-page {
+  background: var(--paper);
+}
+
+.speech-header {
+  position: static;
+  width: min(calc(100% - 64px), var(--max-width));
+  margin: 0 auto;
+  border-bottom-color: var(--line);
+  color: var(--ink);
+  transform: none;
+}
+
+.speech-header .site-nav a,
+.speech-header .header-action {
+  color: #4f5661;
+}
+
+.speech-main {
+  width: min(calc(100% - 64px), var(--max-width));
+  margin: 0 auto;
+}
+
+.speech-hero {
+  padding: clamp(72px, 11vw, 140px) 0 clamp(48px, 7vw, 86px);
+}
+
+.speech-hero h1 {
+  margin: 0 0 20px;
+  color: #000;
+  font-size: clamp(48px, 8vw, 96px);
+  line-height: 0.95;
+  letter-spacing: -0.06em;
+}
+
+.speech-hero p:last-child {
+  max-width: 680px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 18px;
+  line-height: 1.9;
+}
+
+.speech-list {
+  padding-bottom: clamp(88px, 12vw, 150px);
+}
+
+.speech-item {
+  scroll-margin-top: 30px;
+  padding: 36px 0;
+  border-top: 1px solid var(--line);
+}
+
+.speech-item h2 {
+  margin: 0 0 10px;
+  color: #000;
+  font-size: 28px;
+}
+
+.speech-meta {
+  margin: 0 0 18px;
+  color: var(--brand-red);
+  font-size: 14px;
+}
+
+.speech-item p:last-child {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.9;
+}
+
+@media (max-width: 760px) {
+  .student-entry {
+    grid-template-columns: 86px minmax(0, 1fr);
+    gap: 20px;
+    padding: 34px 0;
+  }
+
+  .student-entry .card-photo {
+    width: 78px;
+    height: 78px;
+  }
+
+  .student-entry .card-name {
+    font-size: 18px;
+  }
+
+  .student-entry .card-fields {
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+
+  .student-entry .card-field {
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+
+  .student-entry .card-bio {
+    font-size: 15px;
+    line-height: 1.85;
+  }
+
+  .student-entry .card-actions {
+    margin-top: 18px;
+  }
+
+  .speech-header,
+  .speech-main {
+    width: calc(100% - 40px);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
