@@ -2317,10 +2317,11 @@ button {
   }
 }
 
-/* 中文版精简首页：移除 KV 图片与项目介绍后，首屏采用单栏表达。 */
+/* 中文版精简首页：保留官方 KV 与 Logo，仅移除页面额外英文文案。 */
 .hero {
-  min-height: clamp(560px, 68vw, 760px);
-  grid-template-columns: minmax(0, 920px);
+  min-height: clamp(620px, 62vw, 760px);
+  grid-template-columns: minmax(360px, 0.82fr) minmax(500px, 1.18fr);
+  align-items: center;
 }
 
 .hero-copy {
@@ -2333,7 +2334,17 @@ button {
 
 @media (max-width: 1120px) {
   .hero {
-    grid-template-columns: minmax(0, 860px);
+    grid-template-columns: minmax(320px, 0.86fr) minmax(420px, 1.14fr);
+  }
+}
+
+@media (max-width: 880px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-art {
+    margin-top: 30px;
   }
 }
 
