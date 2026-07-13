@@ -1775,6 +1775,14 @@ button {
   color: var(--muted);
 }
 
+.students-section .section-heading > .sorting-note {
+  margin-bottom: 6px;
+  font-size: 12px;
+  font-style: italic;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
 .filter-panel {
   margin-top: 28px;
   padding: 0;
