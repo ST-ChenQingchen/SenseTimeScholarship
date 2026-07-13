@@ -1866,32 +1866,43 @@ button {
 }
 
 .closing-section {
-  color: #171717;
-  background:
-    radial-gradient(circle at 76% 36%, rgba(240, 46, 39, 0.09), transparent 31%),
-    radial-gradient(circle at 88% 76%, rgba(176, 92, 30, 0.08), transparent 27%),
-    #e8e3dc;
+  min-height: 280px;
+  color: #fff;
+  background: #04256f url("./assets/brand/footer-ribbon.jpg") center / 100% auto no-repeat;
 }
 
 .closing-section::before {
-  opacity: 0.055;
-  filter: saturate(0.35) brightness(0.72);
-  mix-blend-mode: multiply;
+  opacity: 1;
+  background: linear-gradient(90deg, rgba(1, 19, 77, 0.54), rgba(1, 25, 88, 0.2) 60%, rgba(1, 22, 74, 0.38));
+  filter: none;
+  mix-blend-mode: normal;
 }
 
 .closing-copy h2 {
-  color: #171717;
+  color: #fff;
+  text-shadow: 0 2px 22px rgba(0, 10, 52, 0.28);
+}
+
+.closing-copy .eyebrow {
+  color: rgba(255, 255, 255, 0.78);
 }
 
 .closing-ten {
-  color: rgba(240, 46, 39, 0.045);
-  -webkit-text-stroke-color: rgba(150, 37, 32, 0.2);
+  color: rgba(255, 255, 255, 0.08);
+  -webkit-text-stroke-color: rgba(255, 255, 255, 0.2);
   text-shadow: none;
 }
 
 .closing-orbit {
-  border-color: rgba(150, 37, 32, 0.16);
-  box-shadow: 0 0 0 28px rgba(150, 37, 32, 0.035), 0 0 0 60px rgba(72, 55, 45, 0.025);
+  border-color: rgba(80, 229, 255, 0.2);
+  box-shadow: 0 0 30px rgba(20, 214, 255, 0.16), 0 0 0 28px rgba(36, 128, 255, 0.06);
+}
+
+@media (max-width: 640px) {
+  .closing-section {
+    min-height: 300px;
+    background-size: cover;
+  }
 }
 
 .site-footer {
@@ -2523,9 +2534,16 @@ button {
   transform: none;
 }
 
-.speech-header .site-nav a,
 .speech-header .header-action {
-  color: #4f5661;
+  display: inline-flex;
+  color: #fff;
+  background: var(--brand-red);
+}
+
+.speech-header .header-action:hover,
+.speech-header .header-action:focus-visible {
+  color: #fff;
+  background: var(--brand-red-dark);
 }
 
 .speech-main {
@@ -2587,6 +2605,21 @@ button {
 
 .speech-content p + p {
   margin-top: 1.35em;
+}
+
+.speech-not-found {
+  margin: 0;
+  padding: 40px 0 clamp(88px, 12vw, 150px);
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 18px;
+}
+
+@media (max-width: 640px) {
+  .speech-header .header-action {
+    padding: 8px 11px;
+    font-size: 11px;
+  }
 }
 
 /* 2026-07：透明词云 KV 与精简后的标题结构 */

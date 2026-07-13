@@ -11,7 +11,7 @@
   <body class="speech-page">
     <header class="site-header speech-header" id="top">
       <a class="wordmark" href="./index.html" aria-label="返回获奖名单">
-        <span class="brand-text">商汤</span>
+        <img class="brand-logo" src="./assets/brand/sensetime-logo-vi.png" alt="商汤" />
       </a>
       <a class="header-action" href="./index.html#students">返回名单 <span aria-hidden="true">↗</span></a>
     </header>
@@ -29,11 +29,21 @@
     <script>
       (() => {
         const list = document.querySelector("#speech-list");
-        const students = [...(window.STUDENTS || [])].sort((a, b) =>
-          a.pinyin.localeCompare(b.pinyin, "en", { sensitivity: "base" })
-        );
-        const fragment = document.createDocumentFragment();
-        students.forEach((student) => {
+        const renderStudent = () => {
+          const id = decodeURIComponent(window.location.hash.slice(1));
+          const student = (window.STUDENTS || []).find((item) => item.id === id);
+
+          if (!student) {
+            const message = document.createElement("p");
+            message.className = "speech-not-found";
+            message.textContent = "未找到对应学生的内容。";
+            list.replaceChildren(message);
+            return;
+          }
+
+          document.title = `${student.name} · 我与AI · 2026商汤奖学金`;
+          list.setAttribute("aria-label", `${student.name}的我与AI`);
+
           const item = document.createElement("article");
           item.className = "speech-item";
           item.id = student.id;
@@ -53,9 +63,11 @@
             content.append(paragraph);
           });
           item.append(title, meta, content);
-          fragment.append(item);
-        });
-        list.replaceChildren(fragment);
+          list.replaceChildren(item);
+        };
+
+        renderStudent();
+        window.addEventListener("hashchange", renderStudent);
       })();
     </script>
   </body>
