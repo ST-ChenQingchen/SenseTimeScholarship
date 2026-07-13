@@ -1867,40 +1867,43 @@ button {
 
 .closing-section {
   min-height: 280px;
-  color: #fff;
-  background: #04256f url("./assets/brand/footer-ribbon.jpg") center / 100% auto no-repeat;
+  color: var(--ink);
+  background: #f7f2eb;
 }
 
 .closing-section::before {
-  opacity: 1;
-  background: linear-gradient(90deg, rgba(1, 19, 77, 0.54), rgba(1, 25, 88, 0.2) 60%, rgba(1, 22, 74, 0.38));
-  filter: none;
-  mix-blend-mode: normal;
+  opacity: 0.17;
+  background: url("./assets/brand/footer-ribbon.jpg") center / 100% auto no-repeat;
+  filter: grayscale(1) sepia(1) saturate(8) hue-rotate(320deg) brightness(0.72);
+  mix-blend-mode: multiply;
 }
 
 .closing-copy h2 {
-  color: #fff;
-  text-shadow: 0 2px 22px rgba(0, 10, 52, 0.28);
+  color: #171717;
+  text-shadow: none;
 }
 
 .closing-copy .eyebrow {
-  color: rgba(255, 255, 255, 0.78);
+  color: var(--brand-red);
 }
 
 .closing-ten {
-  color: rgba(255, 255, 255, 0.08);
-  -webkit-text-stroke-color: rgba(255, 255, 255, 0.2);
+  color: rgba(240, 46, 39, 0.055);
+  -webkit-text-stroke-color: rgba(240, 46, 39, 0.2);
   text-shadow: none;
 }
 
 .closing-orbit {
-  border-color: rgba(80, 229, 255, 0.2);
-  box-shadow: 0 0 30px rgba(20, 214, 255, 0.16), 0 0 0 28px rgba(36, 128, 255, 0.06);
+  border-color: rgba(240, 46, 39, 0.14);
+  box-shadow: 0 0 0 28px rgba(240, 46, 39, 0.035), 0 0 0 60px rgba(240, 46, 39, 0.02);
 }
 
 @media (max-width: 640px) {
   .closing-section {
     min-height: 300px;
+  }
+
+  .closing-section::before {
     background-size: cover;
   }
 }
