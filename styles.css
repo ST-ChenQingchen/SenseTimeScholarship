@@ -908,7 +908,7 @@ button {
   z-index: 1;
   display: grid;
   min-height: 200px;
-  grid-template-columns: 1fr auto 1fr;
+  grid-template-columns: 1fr auto;
   align-items: center;
   gap: 28px;
 }
