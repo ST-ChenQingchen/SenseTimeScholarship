@@ -2571,10 +2571,42 @@ button {
   font-size: 14px;
 }
 
-.speech-item p:last-child {
+.speech-content {
+  max-width: 920px;
+}
+
+.speech-content p {
   margin: 0;
   color: var(--muted);
   line-height: 1.9;
+}
+
+.speech-content p + p {
+  margin-top: 1.35em;
+}
+
+/* 2026-07：透明词云 KV 与精简后的标题结构 */
+.hero-art-frame {
+  overflow: visible;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.hero-art-frame::after {
+  display: none;
+}
+
+.hero-art-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
+}
+
+.students-section .section-heading h2 {
+  margin-top: 0;
 }
 
 @media (max-width: 760px) {

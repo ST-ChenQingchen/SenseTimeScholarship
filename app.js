@@ -137,7 +137,7 @@
     const speechLink = document.createElement("a");
     speechLink.className = "card-link card-link-primary";
     speechLink.href = `./award-speeches.html#${student.id}`;
-    speechLink.textContent = "获奖感言";
+    speechLink.textContent = "我与AI";
     actions.append(speechLink);
 
     content.append(fields, biography, actions);
