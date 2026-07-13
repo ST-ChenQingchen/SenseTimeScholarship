@@ -1872,10 +1872,7 @@ button {
 }
 
 .closing-section::before {
-  opacity: 0.17;
-  background: url("./assets/brand/footer-ribbon.jpg") center / 100% auto no-repeat;
-  filter: grayscale(1) sepia(1) saturate(8) hue-rotate(320deg) brightness(0.72);
-  mix-blend-mode: multiply;
+  display: none;
 }
 
 .closing-copy h2 {
@@ -1903,9 +1900,6 @@ button {
     min-height: 300px;
   }
 
-  .closing-section::before {
-    background-size: cover;
-  }
 }
 
 .site-footer {
